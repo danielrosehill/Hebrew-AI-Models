@@ -21,6 +21,7 @@ This is a community resource. Contributions welcome via pull request.
 - [Summarization](#summarization)
 - [OCR / Vision](#ocr--vision)
 - [Speech Foundation Models](#speech-foundation-models)
+- [Curated HF Collections](#curated-hf-collections)
 - [Notable Projects & Resources](#notable-projects--resources)
 - [Key Organizations](#key-organizations)
 
@@ -108,6 +109,7 @@ GitHub: [ivrit-ai/ivrit.ai](https://github.com/ivrit-ai/ivrit.ai) | [ivrit-ai/as
 |-------|--------|-------------|
 | [whisper-heb-ipa](https://huggingface.co/thewh1teagle/whisper-heb-ipa) | thewh1teagle | Hebrew Whisper with IPA phoneme output |
 | [WhiStress](https://huggingface.co/slprl/WhiStress) | slprl | Hebrew stress/prosody-aware ASR |
+| [hebrew_whisper](https://github.com/ShmuelRonen/hebrew_whisper) | ShmuelRonen | Hebrew Whisper ASR project |
 
 ---
 
@@ -245,6 +247,21 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 
 ---
 
+## Curated HF Collections
+
+Curated Hugging Face collections grouping Hebrew models by task:
+
+| Collection | Description |
+|------------|-------------|
+| [Hebrew Punctuation Restoration](https://huggingface.co/collections/danielrosehill/hebrew-puncutation-restoration) | Models for restoring punctuation in Hebrew text |
+| [English-Hebrew Translation](https://huggingface.co/collections/danielrosehill/english-hebrew-translation) | English ↔ Hebrew translation models |
+| [Hebrew Diacritic Restoration](https://huggingface.co/collections/danielrosehill/hebrew-diacritic-restoration-models) | Models for restoring nikud/diacritics |
+| [Hebrew TTS](https://huggingface.co/collections/danielrosehill/hebrew-tts) | Hebrew text-to-speech models |
+| [Hebrew OCR Models](https://huggingface.co/collections/danielrosehill/hebrew-ocr-models) | Hebrew OCR and vision models |
+| [Hebrew ASR](https://huggingface.co/collections/danielrosehill/hebrew-asr) | Hebrew automatic speech recognition models |
+
+---
+
 ## Notable Projects & Resources
 
 | Project | Description |
@@ -257,6 +274,11 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 | [slp-rl/HebTTS](https://github.com/slp-rl/HebTTS) | Diacritic-free Hebrew TTS research |
 | [thewh1teagle/israwave](https://github.com/thewh1teagle/israwave) | Hebrew TTS project |
 | [HebrewNLP/HebrewNLP4J](https://github.com/HebrewNLP/HebrewNLP4J) | Java library for HebrewNLP API |
+| [danielrosehill/Hebrew-TTS-Providers](https://github.com/danielrosehill/Hebrew-TTS-Providers) | Directory of Hebrew TTS providers and services |
+| [danielrosehill/Hebrew-Image-Generation-Eval](https://github.com/danielrosehill/Hebrew-Image-Generation-Eval) | Evaluation of image generation models for Hebrew text |
+| [danielrosehill/Hebrew-LLMs](https://github.com/danielrosehill/Hebrew-LLMs) | Resource list of Hebrew large language models |
+| [AvrahamRaviv/Deep-Learning-in-Hebrew](https://github.com/AvrahamRaviv/Deep-Learning-in-Hebrew) | Deep learning educational resources in Hebrew |
+| [ShmuelRonen/hebrew_whisper](https://github.com/ShmuelRonen/hebrew_whisper) | Hebrew Whisper ASR project |
 
 ---
 
@@ -265,7 +287,7 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 | Organization | Focus | Notes |
 |-------------|-------|-------|
 | [dicta-il](https://huggingface.co/dicta-il) | LLMs, BERT, NLP | Israel Center for Text Analysis. Most comprehensive Hebrew NLP toolkit |
-| [ivrit-ai](https://huggingface.co/ivrit-ai) | ASR / STT | Leading Hebrew speech recognition project. Community-driven |
+| [ivrit-ai](https://huggingface.co/ivrit-ai) | ASR / STT | Leading Hebrew speech recognition project. Community-driven. Website: [ivrit.ai](https://www.ivrit.ai/) |
 | [yam-peleg](https://huggingface.co/yam-peleg) | LLMs | Hebrew Gemma and Mistral adaptations |
 | [avichr](https://huggingface.co/avichr) | NLP | heBERT family — widely used Hebrew NER and sentiment |
 | [onlplab](https://huggingface.co/onlplab) | Foundation BERT | AlephBERT — foundational Hebrew BERT from Bar-Ilan University |
