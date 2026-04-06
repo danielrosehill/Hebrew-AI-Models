@@ -249,16 +249,21 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 
 ## Curated HF Collections
 
-Curated Hugging Face collections grouping Hebrew models by task:
+Curated Hugging Face collections (by danielrosehill) grouping Hebrew models, datasets, and spaces by task:
 
 | Collection | Description |
 |------------|-------------|
-| [Hebrew Punctuation Restoration](https://huggingface.co/collections/danielrosehill/hebrew-puncutation-restoration) | Models for restoring punctuation in Hebrew text |
-| [English-Hebrew Translation](https://huggingface.co/collections/danielrosehill/english-hebrew-translation) | English ↔ Hebrew translation models |
-| [Hebrew Diacritic Restoration](https://huggingface.co/collections/danielrosehill/hebrew-diacritic-restoration-models) | Models for restoring nikud/diacritics |
-| [Hebrew TTS](https://huggingface.co/collections/danielrosehill/hebrew-tts) | Hebrew text-to-speech models |
-| [Hebrew OCR Models](https://huggingface.co/collections/danielrosehill/hebrew-ocr-models) | Hebrew OCR and vision models |
+| [Hebrew Large Language Models](https://huggingface.co/collections/danielrosehill/hebrew-large-language-models) | LLMs with Hebrew capabilities |
 | [Hebrew ASR](https://huggingface.co/collections/danielrosehill/hebrew-asr) | Hebrew automatic speech recognition models |
+| [Whisper Hebrish](https://huggingface.co/collections/danielrosehill/whisper-hebrish) | Whisper-based Hebrew/English models |
+| [Hebrew TTS](https://huggingface.co/collections/danielrosehill/hebrew-tts) | Hebrew text-to-speech models |
+| [English-Hebrew Translation](https://huggingface.co/collections/danielrosehill/english-hebrew-translation) | English ↔ Hebrew translation models |
+| [Hebrew Punctuation Restoration](https://huggingface.co/collections/danielrosehill/hebrew-puncutation-restoration) | Models for restoring punctuation in Hebrew text |
+| [Hebrew Diacritic Restoration](https://huggingface.co/collections/danielrosehill/hebrew-diacritic-restoration-models) | Models for restoring nikud/diacritics |
+| [Hebrew Sentiment Classification Models](https://huggingface.co/collections/danielrosehill/hebrew-sentiment-classification-models) | Sentiment classification |
+| [Hebrew OCR Models](https://huggingface.co/collections/danielrosehill/hebrew-ocr-models) | Hebrew OCR and vision models |
+| [Hebrew Datasets](https://huggingface.co/collections/danielrosehill/hebrew-datasets) | Datasets for Hebrew NLP/AI |
+| [Hebrew AI Spaces](https://huggingface.co/collections/danielrosehill/hebrew-ai-spaces) | Hugging Face Spaces for Hebrew AI |
 
 ---
 
