@@ -233,6 +233,7 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 | [testing-trOCR-hebrew-handwritten](https://huggingface.co/sivan22/testing-trOCR-hebrew-handwritten) | sivan22 | TrOCR for Hebrew handwritten text |
 | [paleo-hebrew-mt5-post-ocr-processing](https://huggingface.co/mr3vial/paleo-hebrew-mt5-post-ocr-processing) | mr3vial | Post-OCR correction for paleo-Hebrew |
 | [paleo-hebrew-qwen3-vl-lora-post-ocr-processing](https://huggingface.co/mr3vial/paleo-hebrew-qwen3-vl-lora-post-ocr-processing) | mr3vial | Vision-language post-OCR for paleo-Hebrew |
+| [paddleocr-hebrew](https://huggingface.co/Rivok/paddleocr-hebrew) | Rivok | Printed modern Hebrew OCR: PaddleOCR finetunes (detectors + recognizers) as ONNX, runs on CPU. Reads Latin/digit runs inside Hebrew lines. Apache-2.0 |
 
 ---
 
