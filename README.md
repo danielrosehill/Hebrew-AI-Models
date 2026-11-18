@@ -4,7 +4,7 @@
 
 A catalog of AI models for the Hebrew language — LLMs, speech-to-text, text-to-speech, NLP, embeddings, translation, and more.
 
-Datasets for Hebrew (audio, sentence and text) are catalogued in the companion repo [Hebrew-Datasets](https://github.com/danielrosehill/Hebrew-Datasets).
+Part of the [Hebrew AI](https://github.com/danielrosehill/Hebrew-AI) index. Datasets are catalogued in [Hebrew-Datasets](https://github.com/danielrosehill/Hebrew-Datasets); people and organisations in [Hebrew-AI-Community](https://github.com/danielrosehill/Hebrew-AI-Community). Scope: [SCOPE.md](SCOPE.md).
 
 This is a community resource. Contributions welcome via pull request.
 
@@ -150,7 +150,7 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 
 | Model / Project | Author | Description |
 |-----------------|--------|-------------|
-| [HebTTS](https://github.com/slp-rl/HebTTS) | slp-rl (Technion) | Diacritic-free Hebrew TTS research |
+| [HebTTS](https://github.com/slp-rl/HebTTS) | slp-rl (Hebrew University) | Diacritic-free Hebrew TTS research |
 | [SIMS-Llama3.2-3B](https://huggingface.co/slprl/SIMS-Llama3.2-3B) | slprl | Speech-language model, 3B |
 | [SIMS-7B](https://huggingface.co/slprl/SIMS-7B) | slprl | Larger speech-language model |
 | [israwave](https://github.com/thewh1teagle/israwave) | thewh1teagle | Hebrew TTS project |
@@ -283,7 +283,7 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 
 | Model | Author | Description |
 |-------|--------|-------------|
-| [mhubert-base-25hz](https://huggingface.co/slprl/mhubert-base-25hz) | slprl (Technion) | mHuBERT speech features at 25Hz |
+| [mhubert-base-25hz](https://huggingface.co/slprl/mhubert-base-25hz) | slprl (Hebrew University) | mHuBERT speech features at 25Hz |
 | [slam / slam_scaled / slam_large](https://huggingface.co/slprl/slam_scaled) | slprl | Speech-language alignment models |
 | [StresSLM](https://huggingface.co/slprl/StresSLM) | slprl | Hebrew stress-aware speech-language model |
 | [PAST](https://huggingface.co/slprl/PAST) | slprl | Prosody-aware speech model |
@@ -342,7 +342,7 @@ All collections: [https://huggingface.co/danielrosehill/collections](https://hug
 | [avichr](https://huggingface.co/avichr) | NLP | heBERT family — widely used Hebrew NER and sentiment |
 | [onlplab](https://huggingface.co/onlplab) | Foundation BERT | AlephBERT — foundational Hebrew BERT from Bar-Ilan University |
 | [imvladikon](https://huggingface.co/imvladikon) | ASR, embeddings | wav2vec2 Hebrew (144K downloads), sentence transformers |
-| [slprl](https://huggingface.co/slprl) | TTS, speech | Technion Speech Processing Lab |
+| [slprl](https://huggingface.co/slprl) | TTS, speech | SLP-RL, Hebrew University speech and language processing lab |
 | [HeNLP](https://huggingface.co/HeNLP) | Foundation models | HeRo (Hebrew RoBERTa) |
 | [Helsinki-NLP](https://huggingface.co/Helsinki-NLP) | Translation | OPUS-MT Hebrew translation models |
 | [Norod78](https://huggingface.co/Norod78) | Small LLMs | Hebrew GPT-2, GPT-Neo, creative fine-tunes |
@@ -360,7 +360,7 @@ Most models tagged Hebrew on the Hub are multilingual models that list Hebrew am
 
 ## Contributing
 
-Know of a Hebrew AI model not listed here? Open a pull request or file an issue.
+Maintained on a best-effort basis by [Daniel Rosehill](https://github.com/danielrosehill). To be included, or to send a correction, open a pull request or email public@danielrosehill.com.
 
 ## License
 
