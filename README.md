@@ -4,7 +4,7 @@
 
 A catalog of AI models for the Hebrew language — LLMs, speech-to-text, text-to-speech, NLP, embeddings, translation, and more.
 
-Part of the [Hebrew AI](https://github.com/danielrosehill/Hebrew-AI) index. Datasets are catalogued in [Hebrew-Datasets](https://github.com/danielrosehill/Hebrew-Datasets); people and organisations in [Hebrew-AI-Community](https://github.com/danielrosehill/Hebrew-AI-Community). Scope: [SCOPE.md](SCOPE.md).
+Part of the [Hebrew AI](https://github.com/danielrosehill/Hebrew-AI) index. Datasets are catalogued in [Hebrew-Datasets](https://github.com/danielrosehill/Hebrew-Datasets); people and organisations in [Hebrew-AI-Community](https://github.com/danielrosehill/Hebrew-AI-Community), benchmarks in [Hebrew-AI-Benchmarks](https://github.com/danielrosehill/Hebrew-AI-Benchmarks). Scope: [SCOPE.md](SCOPE.md).
 
 This is a community resource. Contributions welcome via pull request.
 
