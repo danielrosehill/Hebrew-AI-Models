@@ -4,6 +4,8 @@
 
 A catalog of AI models for the Hebrew language — LLMs, speech-to-text, text-to-speech, NLP, embeddings, translation, and more.
 
+Datasets for Hebrew (audio, sentence and text) are catalogued in the companion repo [Hebrew-Datasets](https://github.com/danielrosehill/Hebrew-Datasets).
+
 This is a community resource. Contributions welcome via pull request.
 
 **Last updated:** April 1, 2026
@@ -249,21 +251,22 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 
 ## Curated HF Collections
 
-Curated Hugging Face collections (by danielrosehill) grouping Hebrew models, datasets, and spaces by task:
+Curated Hugging Face collections (by danielrosehill) grouping Hebrew models, datasets and spaces:
 
-| Collection | Description |
-|------------|-------------|
-| [Hebrew Large Language Models](https://huggingface.co/collections/danielrosehill/hebrew-large-language-models) | LLMs with Hebrew capabilities |
-| [Hebrew ASR](https://huggingface.co/collections/danielrosehill/hebrew-asr) | Hebrew automatic speech recognition models |
-| [Whisper Hebrish](https://huggingface.co/collections/danielrosehill/whisper-hebrish) | Whisper-based Hebrew/English models |
-| [Hebrew TTS](https://huggingface.co/collections/danielrosehill/hebrew-tts) | Hebrew text-to-speech models |
-| [English-Hebrew Translation](https://huggingface.co/collections/danielrosehill/english-hebrew-translation) | English ↔ Hebrew translation models |
-| [Hebrew Punctuation Restoration](https://huggingface.co/collections/danielrosehill/hebrew-puncutation-restoration) | Models for restoring punctuation in Hebrew text |
-| [Hebrew Diacritic Restoration](https://huggingface.co/collections/danielrosehill/hebrew-diacritic-restoration-models) | Models for restoring nikud/diacritics |
-| [Hebrew Sentiment Classification Models](https://huggingface.co/collections/danielrosehill/hebrew-sentiment-classification-models) | Sentiment classification |
-| [Hebrew OCR Models](https://huggingface.co/collections/danielrosehill/hebrew-ocr-models) | Hebrew OCR and vision models |
-| [Hebrew Datasets](https://huggingface.co/collections/danielrosehill/hebrew-datasets) | Datasets for Hebrew NLP/AI |
-| [Hebrew AI Spaces](https://huggingface.co/collections/danielrosehill/hebrew-ai-spaces) | Hugging Face Spaces for Hebrew AI |
+<!-- collections:start -->
+<!-- Generated from collections.json by scripts/render_collections.py; edit that file, not this table. -->
+| Collection | Contents |
+|------------|----------|
+| [Hebrew ASR (And Audio To Text)](https://huggingface.co/collections/danielrosehill/hebrew-asr-and-audio-to-text-69cbb72271b4fe75732a465a) | Hebrew ASR and audio-to-text models |
+| [Hebrew TTS](https://huggingface.co/collections/danielrosehill/hebrew-tts-69cbb6f343675b83becaeae1) | Hebrew text-to-speech models |
+| [Hebrew LLMs + Text Prediction](https://huggingface.co/collections/danielrosehill/hebrew-llms-text-prediction-675f3e982858d6e9652e7bac) | Hebrew LLMs and text prediction models |
+| [Hebrew](https://huggingface.co/collections/danielrosehill/hebrew-6ad68f42575d0b5073d19e86) | General Hebrew collection: models and datasets across tasks |
+| [Code Switching (English And Hebrew) - All Resources](https://huggingface.co/collections/danielrosehill/code-switching-english-and-hebrew-all-resources-6acfdcb1e11911797af4c3b3) | English-Hebrew code-switching models and datasets |
+| [Parakeet V2 - English-Hebrew Codeswitching Finetune](https://huggingface.co/collections/danielrosehill/parakeet-v2-english-hebrew-codeswitching-finetune-6ad26d79c70d28a49ed71c78) | Parakeet TDT 0.6B v2 English-Hebrew code-switching fine-tunes |
+| [Hebrew AI Spaces](https://huggingface.co/collections/danielrosehill/hebrew-ai-spaces-68042a7ab079f5df1cdf9264) | Hugging Face Spaces for Hebrew AI (spaces are listed, not imported) |
+
+All collections: [https://huggingface.co/danielrosehill/collections](https://huggingface.co/danielrosehill/collections)
+<!-- collections:end -->
 
 ---
 
@@ -271,6 +274,7 @@ Curated Hugging Face collections (by danielrosehill) grouping Hebrew models, dat
 
 | Project | Description |
 |---------|-------------|
+| [danielrosehill/Hebrew-Datasets](https://github.com/danielrosehill/Hebrew-Datasets) | Companion list: Hebrew audio, sentence and text datasets |
 | [NNLP-IL/Hebrew-Resources](https://github.com/NNLP-IL/Hebrew-Resources) | Comprehensive list of Hebrew NLP resources |
 | [iddoberger/awesome-hebrew-nlp](https://github.com/iddoberger/awesome-hebrew-nlp) | Curated list of Hebrew NLP resources |
 | [ivrit-ai/ivrit.ai](https://github.com/ivrit-ai/ivrit.ai) | Main ivrit.ai codebase for Hebrew ASR |

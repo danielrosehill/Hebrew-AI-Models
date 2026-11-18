@@ -1,7 +1,8 @@
 {
   "_about": "Hugging Face Hub searches for Hebrew models. mode 'tag' = Hebrew language tag + one task (pipeline_tag) + one sort: the firehose, mostly multilingual models. mode 'name' = model ids containing 'heb' (also matches 'hebrew') + one task: the specialist lane. scripts/snapshot.py runs them; web_url is the same search in the browser. Add a permutation by adding an entry; ids are <task-short>-<sort> or <task-short>-name.",
   "api_notes": "API uses filter=he (exact tag match), not language=he: on 2026-11-18 the API's language=he returned 1000 TTS models of which only 54 carried the he tag (Kokoro-82M, pyannote, Japanese wav2vec2...), while filter=he returned 419, all tagged. search=heb returned 11 TTS models, 9 of them Hebrew specialists.",
-  "language": "he",
+  "kind": "models",
+  "language_tag": "he",
   "api_base": "https://huggingface.co/api/models",
   "sorts": {
     "trending": {
@@ -131,6 +132,68 @@
       "web_url": "https://huggingface.co/models?pipeline_tag=text-to-speech&search=heb&sort=downloads"
     },
     {
+      "id": "ocr-trending",
+      "mode": "tag",
+      "task": "image-to-text",
+      "sort": "trending",
+      "limit": 100,
+      "tier": "core",
+      "readme_section": "OCR / Vision",
+      "web_url": "https://huggingface.co/models?pipeline_tag=image-to-text&language=he&sort=trending"
+    },
+    {
+      "id": "ocr-downloads",
+      "mode": "tag",
+      "task": "image-to-text",
+      "sort": "downloads",
+      "limit": 100,
+      "tier": "core",
+      "readme_section": "OCR / Vision",
+      "web_url": "https://huggingface.co/models?pipeline_tag=image-to-text&language=he&sort=downloads"
+    },
+    {
+      "id": "ocr-name",
+      "mode": "name",
+      "task": "image-to-text",
+      "search": "heb",
+      "sort": "downloads",
+      "limit": 500,
+      "tier": "core",
+      "readme_section": "OCR / Vision",
+      "web_url": "https://huggingface.co/models?pipeline_tag=image-to-text&search=heb&sort=downloads"
+    },
+    {
+      "id": "vlm-ocr-trending",
+      "mode": "tag",
+      "task": "image-text-to-text",
+      "sort": "trending",
+      "limit": 100,
+      "tier": "core",
+      "readme_section": "OCR / Vision",
+      "web_url": "https://huggingface.co/models?pipeline_tag=image-text-to-text&language=he&sort=trending"
+    },
+    {
+      "id": "vlm-ocr-downloads",
+      "mode": "tag",
+      "task": "image-text-to-text",
+      "sort": "downloads",
+      "limit": 100,
+      "tier": "core",
+      "readme_section": "OCR / Vision",
+      "web_url": "https://huggingface.co/models?pipeline_tag=image-text-to-text&language=he&sort=downloads"
+    },
+    {
+      "id": "vlm-ocr-name",
+      "mode": "name",
+      "task": "image-text-to-text",
+      "search": "heb",
+      "sort": "downloads",
+      "limit": 500,
+      "tier": "core",
+      "readme_section": "OCR / Vision",
+      "web_url": "https://huggingface.co/models?pipeline_tag=image-text-to-text&search=heb&sort=downloads"
+    },
+    {
       "id": "translation-downloads",
       "task": "translation",
       "sort": "downloads",
@@ -198,16 +261,6 @@
       "tier": "extra",
       "readme_section": "Summarization",
       "web_url": "https://huggingface.co/models?pipeline_tag=summarization&language=he&sort=downloads",
-      "mode": "tag"
-    },
-    {
-      "id": "ocr-downloads",
-      "task": "image-to-text",
-      "sort": "downloads",
-      "limit": 100,
-      "tier": "extra",
-      "readme_section": "OCR / Vision",
-      "web_url": "https://huggingface.co/models?pipeline_tag=image-to-text&language=he&sort=downloads",
       "mode": "tag"
     }
   ]

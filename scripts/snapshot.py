@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
-"""Take a dated firehose snapshot of the Hugging Face searches in hfsearches.json.
+"""Snapshot Hugging Face sources into a dated folder for triage.
 
-Stdlib only; run with `uv run scripts/snapshot.py` (or plain python3) from the repo root.
+Shared, byte-identical, by Hebrew-AI-Models (kind: models) and Hebrew-Datasets (kind: datasets);
+the kind comes from hfsearches.json. Stdlib only; run from the repo root with uv run.
 
-  uv run scripts/snapshot.py                  # core: llm/asr/tts x (trending, downloads, name)
-  uv run scripts/snapshot.py --all            # core + extra
+  uv run scripts/snapshot.py                      # core saved searches
+  uv run scripts/snapshot.py --all                # core + extra searches
   uv run scripts/snapshot.py --search tts-trending --search asr-downloads
-  uv run scripts/snapshot.py --limit 20       # override per-search limit (small test runs)
+  uv run scripts/snapshot.py --collections        # only the curated collections in collections.json
+  uv run scripts/snapshot.py --limit 20           # override per-search limit (small test runs)
 
 Writes snapshots/YYYY-MM-DD/:
-  <search-id>.json   raw results, one model per line, with the query that produced them
-  candidates.json    unique models across those searches, with pre-triage signals and any
-                     verdict already in data/verdicts.json; the agent triages from this file
+  <search-id>.json              raw search results, one item per line, with the query that produced them
+  collection-<key>.json         raw collection items (same shape)
+  candidates.json               unique items across everything fetched that day (merged if the file
+                                already exists), with pre-triage signals and any verdict already in
+                                data/verdicts.json; the agent triages from this file
 """
 import argparse
 import datetime as dt
@@ -26,87 +30,126 @@ HEBREW_NAME = re.compile(r"hebrew|ivrit|hebrish|(^|[-_/.])(he|heb)([-_/.]|$)", r
 # Short tags that look like language codes but are not.
 NOT_LANG = {"asr", "tdt", "jax", "mlx", "tts", "stt", "gpt", "llm", "ctc", "vad", "sft", "dpo",
             "orpo", "onnx", "pt", "art", "ocr", "lid", "nlp", "ner", "moe", "rl", "us", "eu"}
+UA = {"User-Agent": "hebrew-hf-snapshot"}
+
+
+def get(url):
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r:
+        return json.load(r)
 
 
 def languages(tags):
-    return [t for t in tags if re.fullmatch(r"[a-z]{2,3}", t) and t not in NOT_LANG]
+    out = []
+    for t in tags:
+        t = t.removeprefix("language:")
+        if re.fullmatch(r"[a-z]{2,3}", t) and t not in NOT_LANG:
+            out.append(t)
+    return out
 
 
-def fetch(cfg, search, limit):
-    params = {"pipeline_tag": search["task"], "sort": cfg["sorts"][search["sort"]]["api"],
-              "direction": "-1", "limit": str(limit)}
-    if search["mode"] == "name":
-        params["search"] = search["search"]
+def search_url(cfg, s, limit):
+    params = [("sort", cfg["sorts"][s["sort"]]["api"]), ("direction", "-1"), ("limit", str(limit))]
+    if s.get("task") and cfg["kind"] == "models":
+        params.append(("pipeline_tag", s["task"]))
+    elif s.get("task"):
+        params.append(("filter", f"task_categories:{s['task']}"))
+    if s["mode"] == "name":
+        params.append(("search", s["search"]))
     else:  # exact tag; the API's language= parameter is much looser (see api_notes)
-        params["filter"] = cfg["language"]
-    url = cfg["api_base"] + "?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers={"User-Agent": "hebrew-ai-models-snapshot"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return url, json.load(r)
+        params.append(("filter", cfg["language_tag"]))
+    return cfg["api_base"] + "?" + urllib.parse.urlencode(params)
 
 
-def hint(m, langs, known):
-    author = m["id"].split("/")[0]
-    if HEBREW_NAME.search(m["id"]) or author in known:
+def hint(item_id, langs, known):
+    if HEBREW_NAME.search(item_id) or item_id.split("/")[0] in known:
         return "likely-specialist"
     if "he" not in langs:
-        # The Hub's language=he filter also returns models whose tags never mention Hebrew.
+        # The Hub's language filters also return items whose tags never mention Hebrew.
         return "no-hebrew-tag"
     if len(langs) >= 5:
         return "likely-multilingual"
     return "unclear"
 
 
+def write_raw(path, meta, items):
+    body = ",\n".join(json.dumps(m, ensure_ascii=False) for m in items)
+    path.write_text(f'{{"meta": {json.dumps(meta, ensure_ascii=False)},\n"items": [\n{body}\n]}}\n')
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--search", action="append", default=[])
+    ap.add_argument("--collections", action="store_true")
     ap.add_argument("--limit", type=int)
     ap.add_argument("--date", default=dt.date.today().isoformat())
     a = ap.parse_args()
 
     cfg = json.loads((ROOT / "hfsearches.json").read_text())
-    verdicts = json.loads((ROOT / "data/verdicts.json").read_text())["models"]
+    kind = cfg["kind"]
+    verdicts = json.loads((ROOT / "data/verdicts.json").read_text())["models" if kind == "models" else "datasets"]
     readme = (ROOT / "README.md").read_text()
     known = set(cfg["known_hebrew_authors"])
-    chosen = [s for s in cfg["searches"]
-              if (s["id"] in a.search if a.search else (a.all or s["tier"] == "core"))]
-    missing = set(a.search) - {s["id"] for s in chosen}
-    if missing:
-        raise SystemExit(f"unknown search id(s): {sorted(missing)}")
+    now = lambda: dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
     out = ROOT / "snapshots" / a.date
     out.mkdir(parents=True, exist_ok=True)
-    cands = {}
-    for s in chosen:
-        url, models = fetch(cfg, s, a.limit or s["limit"])
-        body = ",\n".join(json.dumps(m, ensure_ascii=False) for m in models)
-        head = json.dumps({"search": s["id"], "query": url, "web_url": s["web_url"],
-                           "fetched": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-                           "count": len(models)}, ensure_ascii=False)
-        (out / f"{s['id']}.json").write_text(f'{{"meta": {head},\n"models": [\n{body}\n]}}\n')
-        for rank, m in enumerate(models, 1):
-            tags = m.get("tags", [])
-            langs = languages(tags)
-            c = cands.setdefault(m["id"], {
-                "id": m["id"], "url": f"https://huggingface.co/{m['id']}",
-                "pipeline_tag": m.get("pipeline_tag"), "downloads": m.get("downloads"),
-                "likes": m.get("likes"), "created": (m.get("createdAt") or "")[:10],
-                "n_languages": len(langs), "he_tagged": "he" in langs,
-                "base_model": next((t.split(":", 1)[1] for t in tags if t.startswith("base_model:")
-                                    and t.count(":") == 1), None),
-                "hint": hint(m, langs, known),
-                "in_readme": m["id"] in readme,
-                "prior_verdict": verdicts.get(m["id"], {}).get("verdict"),
-                "seen_in": {}})
-            c["seen_in"][s["id"]] = rank
-        print(f"{s['id']}: {len(models)}")
+    cpath = out / "candidates.json"
+    cands = {c["id"]: c for c in json.loads(cpath.read_text())} if cpath.exists() else {}
 
-    rows = sorted(cands.values(), key=lambda c: (c["prior_verdict"] is not None, c["hint"] != "likely-specialist", -(c["downloads"] or 0)))
-    body = ",\n".join(json.dumps(c, ensure_ascii=False) for c in rows)
-    (out / "candidates.json").write_text(f"[\n{body}\n]\n")
+    def add(m, source, rank, curated=False):
+        tags = m.get("tags", [])
+        langs = languages(tags)
+        c = cands.setdefault(m["id"], {
+            "id": m["id"],
+            "url": f"https://huggingface.co/{'datasets/' if kind == 'datasets' else ''}{m['id']}",
+            "task": m.get("pipeline_tag") or [t.split(":", 1)[1] for t in tags if t.startswith("task_categories:")],
+            "downloads": m.get("downloads"), "likes": m.get("likes"),
+            "created": (m.get("createdAt") or "")[:10],
+            "n_languages": len(langs), "he_tagged": "he" in langs,
+            "base_model": next((t.split(":", 1)[1] for t in tags
+                                if t.startswith("base_model:") and t.count(":") == 1), None),
+            "hint": hint(m["id"], langs, known),
+            "curated": False,
+            "in_readme": m["id"] in readme,
+            "prior_verdict": verdicts.get(m["id"], {}).get("verdict"),
+            "seen_in": {}})
+        c["seen_in"][source] = rank
+        c["curated"] = c["curated"] or curated
+
+    if a.collections:
+        coll = json.loads((ROOT / "collections.json").read_text())
+        want = "model" if kind == "models" else "dataset"
+        for col in coll["collections"]:
+            data = get(f"https://huggingface.co/api/collections/{col['slug']}")
+            ids = [i["id"] for i in data["items"] if i["type"] == want]
+            # Collection items carry few fields; fetch each item for tags and counts.
+            items = [get(f"{cfg['api_base']}/{i}") for i in ids]
+            write_raw(out / f"collection-{col['key']}.json",
+                      {"collection": col["slug"], "url": col["url"], "fetched": now(), "count": len(items)}, items)
+            for rank, m in enumerate(items, 1):
+                add(m, f"collection:{col['key']}", rank, curated=True)
+            print(f"collection {col['key']}: {len(items)} {kind}")
+    else:
+        chosen = [s for s in cfg["searches"]
+                  if (s["id"] in a.search if a.search else (a.all or s["tier"] == "core"))]
+        missing = set(a.search) - {s["id"] for s in chosen}
+        if missing:
+            raise SystemExit(f"unknown search id(s): {sorted(missing)}")
+        for s in chosen:
+            url = search_url(cfg, s, a.limit or s["limit"])
+            items = get(url)
+            write_raw(out / f"{s['id']}.json",
+                      {"search": s["id"], "query": url, "web_url": s["web_url"], "fetched": now(), "count": len(items)}, items)
+            for rank, m in enumerate(items, 1):
+                add(m, s["id"], rank)
+            print(f"{s['id']}: {len(items)}")
+
+    rows = sorted(cands.values(), key=lambda c: (c["prior_verdict"] is not None, not c["curated"],
+                                                 c["hint"] != "likely-specialist", -(c["downloads"] or 0)))
+    cpath.write_text("[\n" + ",\n".join(json.dumps(c, ensure_ascii=False) for c in rows) + "\n]\n")
     new = sum(1 for c in rows if c["prior_verdict"] is None)
-    print(f"{len(rows)} unique models, {new} without a verdict -> {out.relative_to(ROOT)}/candidates.json")
+    print(f"{len(rows)} unique {kind}, {new} without a verdict -> {cpath.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

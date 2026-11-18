@@ -1,0 +1,22 @@
+{
+  "_about": "Settings for scripts/build_space.py and the build-hf-space skill. The Space is generated from README.md; never edit space/ by hand.",
+  "space_id": "danielrosehill/Hebrew-AI-Models",
+  "space_url": "https://huggingface.co/spaces/danielrosehill/Hebrew-AI-Models",
+  "title": "Hebrew AI Models",
+  "subtitle": "Searchable catalogue of AI models for Hebrew: LLMs, speech recognition, text-to-speech, OCR, NLP, embeddings and translation. Hebrew specialist models are kept apart from multilingual models that support Hebrew.",
+  "github_repo": "https://github.com/danielrosehill/Hebrew-AI-Models",
+  "links": {
+    "Hebrew Datasets": "https://huggingface.co/spaces/danielrosehill/Hebrew-Datasets",
+    "Curated collections": "https://huggingface.co/danielrosehill/collections"
+  },
+  "front_matter": {
+    "title": "Hebrew AI Models",
+    "emoji": "🔤",
+    "colorFrom": "blue",
+    "colorTo": "indigo",
+    "sdk": "static",
+    "pinned": "false",
+    "license": "cc-by-4.0",
+    "short_description": "Searchable catalogue of AI models for Hebrew"
+  }
+}

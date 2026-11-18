@@ -1,0 +1,56 @@
+{
+  "_about": "The maintainer's curated Hugging Face collections. `uv run scripts/snapshot.py --collections` imports the model items from each; collections are curated but not pre-classified, so items still go through triage (docs/classification.md). The README's Curated HF Collections table is generated from this file. Slugs end in a hash; links without it 404.",
+  "owner": "danielrosehill",
+  "owner_collections_url": "https://huggingface.co/danielrosehill/collections",
+  "collections": [
+    {
+      "key": "hebrew-asr",
+      "slug": "danielrosehill/hebrew-asr-and-audio-to-text-69cbb72271b4fe75732a465a",
+      "title": "Hebrew ASR (And Audio To Text)",
+      "url": "https://huggingface.co/collections/danielrosehill/hebrew-asr-and-audio-to-text-69cbb72271b4fe75732a465a",
+      "why": "Hebrew ASR and audio-to-text models"
+    },
+    {
+      "key": "hebrew-tts",
+      "slug": "danielrosehill/hebrew-tts-69cbb6f343675b83becaeae1",
+      "title": "Hebrew TTS",
+      "url": "https://huggingface.co/collections/danielrosehill/hebrew-tts-69cbb6f343675b83becaeae1",
+      "why": "Hebrew text-to-speech models"
+    },
+    {
+      "key": "hebrew-llms",
+      "slug": "danielrosehill/hebrew-llms-text-prediction-675f3e982858d6e9652e7bac",
+      "title": "Hebrew LLMs + Text Prediction",
+      "url": "https://huggingface.co/collections/danielrosehill/hebrew-llms-text-prediction-675f3e982858d6e9652e7bac",
+      "why": "Hebrew LLMs and text prediction models"
+    },
+    {
+      "key": "hebrew",
+      "slug": "danielrosehill/hebrew-6ad68f42575d0b5073d19e86",
+      "title": "Hebrew",
+      "url": "https://huggingface.co/collections/danielrosehill/hebrew-6ad68f42575d0b5073d19e86",
+      "why": "General Hebrew collection: models and datasets across tasks"
+    },
+    {
+      "key": "code-switching",
+      "slug": "danielrosehill/code-switching-english-and-hebrew-all-resources-6acfdcb1e11911797af4c3b3",
+      "title": "Code Switching (English And Hebrew) - All Resources",
+      "url": "https://huggingface.co/collections/danielrosehill/code-switching-english-and-hebrew-all-resources-6acfdcb1e11911797af4c3b3",
+      "why": "English-Hebrew code-switching models and datasets"
+    },
+    {
+      "key": "parakeet-codeswitching",
+      "slug": "danielrosehill/parakeet-v2-english-hebrew-codeswitching-finetune-6ad26d79c70d28a49ed71c78",
+      "title": "Parakeet V2 - English-Hebrew Codeswitching Finetune",
+      "url": "https://huggingface.co/collections/danielrosehill/parakeet-v2-english-hebrew-codeswitching-finetune-6ad26d79c70d28a49ed71c78",
+      "why": "Parakeet TDT 0.6B v2 English-Hebrew code-switching fine-tunes"
+    },
+    {
+      "key": "hebrew-ai-spaces",
+      "slug": "danielrosehill/hebrew-ai-spaces-68042a7ab079f5df1cdf9264",
+      "title": "Hebrew AI Spaces",
+      "url": "https://huggingface.co/collections/danielrosehill/hebrew-ai-spaces-68042a7ab079f5df1cdf9264",
+      "why": "Hugging Face Spaces for Hebrew AI (spaces are listed, not imported)"
+    }
+  ]
+}
