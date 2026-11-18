@@ -8,7 +8,7 @@ Datasets for Hebrew (audio, sentence and text) are catalogued in the companion r
 
 This is a community resource. Contributions welcome via pull request.
 
-**Last updated:** April 1, 2026
+**Last updated:** November 18, 2026
 
 ---
 
@@ -54,14 +54,20 @@ This is a community resource. Contributions welcome via pull request.
 | [Hebrew-Gemma-11B-V2](https://huggingface.co/yam-peleg/Hebrew-Gemma-11B-V2) | 11B | Chat | Hebrew-adapted Gemma, v2 |
 | [Hebrew-Gemma-11B-Instruct](https://huggingface.co/yam-peleg/Hebrew-Gemma-11B-Instruct) | 11B | Instruct | Instruction-tuned Hebrew Gemma |
 | [Hebrew-Gemma-11B](https://huggingface.co/yam-peleg/Hebrew-Gemma-11B) | 11B | Base | Base Hebrew Gemma |
+| [Hebrew-Gemma-11B-i1-GGUF](https://huggingface.co/mradermacher/Hebrew-Gemma-11B-i1-GGUF) | 11B | GGUF | imatrix GGUF quants of Hebrew-Gemma-11B (mradermacher) |
 | [Hebrew-Mistral-7B](https://huggingface.co/yam-peleg/Hebrew-Mistral-7B) | 7B | Base | Hebrew-adapted Mistral 7B |
+| [Hebrew-Mistral-7B-GGUF](https://huggingface.co/mradermacher/Hebrew-Mistral-7B-GGUF) | 7B | GGUF | GGUF quants of Hebrew-Mistral-7B (mradermacher) |
+| [Hebrew-Mistral-7B-GGUF](https://huggingface.co/tensorblock/Hebrew-Mistral-7B-GGUF) | 7B | GGUF | GGUF quants of Hebrew-Mistral-7B (tensorblock) |
+| [Hebrew-Mistral-7B-Q4_K_M-GGUF](https://huggingface.co/rony-shtamler/Hebrew-Mistral-7B-Q4_K_M-GGUF) | 7B | GGUF | Q4_K_M GGUF of Hebrew-Mistral-7B |
 | [Hebrew-Mistral-7B-200K](https://huggingface.co/yam-peleg/Hebrew-Mistral-7B-200K) | 7B | Base | Extended context (200K) Hebrew Mistral |
+| [Hebrew-Mixtral-8x22B](https://huggingface.co/yam-peleg/Hebrew-Mixtral-8x22B) | 141B | Base | Mixtral 8x22B continued-pretrained on English and Hebrew |
 
 ### Other Hebrew LLMs
 
 | Model | Author | Size | Type | Description |
 |-------|--------|------|------|-------------|
 | [Hebrew_Nemo](https://huggingface.co/SicariusSicariiStuff/Hebrew_Nemo) | SicariusSicariiStuff | 12B | Instruct | Hebrew fine-tune of Mistral Nemo |
+| [Hebrew_Nemo-i1-GGUF](https://huggingface.co/mradermacher/Hebrew_Nemo-i1-GGUF) | mradermacher | 12B | GGUF | imatrix GGUF quants of Hebrew_Nemo |
 | [Hebrew-GPT](https://huggingface.co/XythicK/Hebrew-GPT) | XythicK | 1B | Instruct | Hebrew fine-tune of Llama 3.2 1B |
 | [HebrewGPT-1B](https://huggingface.co/Slasky/HebrewGPT-1B) | Slasky | 1B | Base | Hebrew-native GPT trained from scratch |
 | [HebrewGPT-296M](https://huggingface.co/Slasky/HebrewGPT-296M) | Slasky | 296M | Base | Smaller Hebrew-native GPT |
@@ -73,6 +79,11 @@ This is a community resource. Contributions welcome via pull request.
 | [dictalm2.0-instruct-fine-tuned-alpaca-gpt4-hebrew](https://huggingface.co/ronigold/dictalm2.0-instruct-fine-tuned-alpaca-gpt4-hebrew) | ronigold | 7B | Instruct | DictaLM 2.0 fine-tuned on Alpaca GPT-4 Hebrew |
 | [SmolLM-135M-FakyPedia-EngHeb](https://huggingface.co/Norod78/SmolLM-135M-FakyPedia-EngHeb) | Norod78 | 135M | Base | Bilingual English-Hebrew small LM |
 | [gemma-3_4b_hebrew-lyrics-finetune](https://huggingface.co/Norod78/gemma-3_4b_hebrew-lyrics-finetune) | Norod78 | 4B | Fine-tune | Gemma 3 fine-tuned for Hebrew lyrics |
+| [qwen2.5-3b_Hebrew](https://huggingface.co/itayl/qwen2.5-3b_Hebrew) | itayl | 3B | Instruct | Hebrew fine-tune of Qwen2.5 3B (thin card) |
+| [qwen2.5-3b_Hebrew-Q5_K_M-GGUF](https://huggingface.co/itayl/qwen2.5-3b_Hebrew-Q5_K_M-GGUF) | itayl | 3B | GGUF | Q5_K_M GGUF of qwen2.5-3b_Hebrew |
+| [Qwen2.5-1.5B-Instruct-bnb-4bit-Hebrew](https://huggingface.co/itayl/Qwen2.5-1.5B-Instruct-bnb-4bit-Hebrew) | itayl | 1.5B | Instruct | Hebrew fine-tune of Qwen2.5 1.5B Instruct, 4-bit (thin card) |
+| [Llama-3.2-3B-Instruct-Aya-Hebrew-Lora](https://huggingface.co/itayl/Llama-3.2-3B-Instruct-Aya-Hebrew-Lora) | itayl | 3B | LoRA | Hebrew LoRA on Llama 3.2 3B Instruct (thin card) |
+| [hebrew_bible_ai](https://huggingface.co/tombenj/hebrew_bible_ai) | tombenj | — | Base | gpt2-xl fine-tuned on the Hebrew Bible; generates Bible-style verses |
 
 ---
 
@@ -112,6 +123,24 @@ GitHub: [ivrit-ai/ivrit.ai](https://github.com/ivrit-ai/ivrit.ai) | [ivrit-ai/as
 | [whisper-heb-ipa](https://huggingface.co/thewh1teagle/whisper-heb-ipa) | thewh1teagle | Hebrew Whisper with IPA phoneme output |
 | [WhiStress](https://huggingface.co/slprl/WhiStress) | slprl | Hebrew stress/prosody-aware ASR |
 | [hebrew_whisper](https://github.com/ShmuelRonen/hebrew_whisper) | ShmuelRonen | Hebrew Whisper ASR project |
+| [nemotron-3.5-asr-streaming-0.6b-hebrew](https://huggingface.co/mralexivy/nemotron-3.5-asr-streaming-0.6b-hebrew) | mralexivy | Nemotron 3.5 ASR streaming 0.6B fine-tuned on ivrit.ai data |
+| [embeddinggemma-2-asr-hebrew-english-streaming](https://huggingface.co/MaorB/embeddinggemma-2-asr-hebrew-english-streaming) | MaorB | Streaming Hebrew + English ASR on the EmbeddingGemma 2 audio encoder, 351M |
+| [fast-hebrew-asr](https://huggingface.co/asfberlin/fast-hebrew-asr) | asfberlin | GigaAM-He: 220M CTC Hebrew ASR built for real-time calls; faster but less accurate than ivrit.ai turbo |
+| [whisper-large-v3-hebrew](https://huggingface.co/adarcook/whisper-large-v3-hebrew) | adarcook | Whisper large-v3 fine-tuned for Hebrew |
+| [wav2vec2-large-xls-r-300m-hebrew-colab](https://huggingface.co/Mizurodp/wav2vec2-large-xls-r-300m-hebrew-colab) | Mizurodp | wav2vec2 XLS-R 300M Hebrew fine-tune (no model card) |
+| [qwen3-asr-hebrew](https://huggingface.co/guychuk/qwen3-asr-hebrew) | guychuk | Qwen3-ASR Hebrew (no model card) |
+
+### Hebrish (English-Hebrew code-switching)
+
+Maintainer's own ASR models for English speech with Hebrew words mixed in.
+
+| Model | Author | Description |
+|-------|--------|-------------|
+| [Whisper-Hebrish](https://huggingface.co/danielrosehill/Whisper-Hebrish) | danielrosehill | Whisper large-v3-turbo fine-tuned on English-Hebrew code-switching sentences (POC) |
+| [Whisper-Hebrish-Small-ACFT](https://huggingface.co/Hebrish/Whisper-Hebrish-Small-ACFT) | Hebrish | Whisper small.en ACFT build for code-switching (gated) |
+| [Jachnun-GGUF](https://huggingface.co/Hebrish/Jachnun-GGUF) | Hebrish | GGUF of Jachnun (Parakeet TDT 0.6B code-switching); superseded by Sabich-Rolling per its card (gated) |
+| [Jachnun-ONNX](https://huggingface.co/Hebrish/Jachnun-ONNX) | Hebrish | ONNX of Jachnun; superseded by Sabich-Rolling per its card (gated) |
+| [Jachnun-sherpa-onnx-int8](https://huggingface.co/Hebrish/Jachnun-sherpa-onnx-int8) | Hebrish | sherpa-onnx int8 of Jachnun; superseded by Sabich-Rolling per its card (gated) |
 
 ---
 
@@ -130,6 +159,9 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 | [hebrew-orpheus-tts](https://huggingface.co/rotem1121/hebrew-orpheus-tts) | rotem1121 | Hebrew Orpheus TTS variant |
 | [phonikud](https://huggingface.co/thewh1teagle/phonikud) | thewh1teagle | Hebrew diacritization/phonemization for TTS pipelines |
 | [mms-tts-heb](https://huggingface.co/thewh1teagle/mms-tts-heb) | thewh1teagle | Hebrew MMS TTS |
+| [f5tts-hebrew-v2](https://huggingface.co/Yzamari/f5tts-hebrew-v2) | Yzamari | F5-TTS fine-tuned on ~158h of Hebrew speech, 58 built-in voices |
+| [kokoro-hebrew-nc](https://huggingface.co/thewh1teagle/kokoro-hebrew-nc) | thewh1teagle | Kokoro Hebrew ONNX export, non-commercial licence (from avris/kokoro-hebrew-saspeech) |
+| [MOSS-TTS-Realtime-Hebrew](https://huggingface.co/dm15/MOSS-TTS-Realtime-Hebrew) | dm15 | Hebrew MOSS-TTS Realtime (no model card) |
 
 ---
 
@@ -148,6 +180,8 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 | [NeoDictaBERT-bilingual](https://huggingface.co/dicta-il/neodictabert-bilingual) | dicta-il | Bilingual Hebrew-English BERT |
 | [AlephBertGimmel-base](https://huggingface.co/dicta-il/alephbertgimmel-base) | dicta-il | Third-generation Hebrew BERT |
 | [MsBERT](https://huggingface.co/dicta-il/MsBERT) | dicta-il | Hebrew BERT variant |
+| [Knesset-DictaBERT](https://huggingface.co/GiliGold/Knesset-DictaBERT) | GiliGold | DictaBERT fine-tuned on the Knesset corpus (parliamentary Hebrew) |
+| [bert-mini-hebrew](https://huggingface.co/yosefw/bert-mini-hebrew) | yosefw | Small Hebrew BERT |
 | [HeRo](https://huggingface.co/HeNLP/HeRo) | HeNLP | Hebrew RoBERTa |
 | [LongHeRo](https://huggingface.co/HeNLP/LongHeRo) | HeNLP | Long-context Hebrew RoBERTa |
 
@@ -165,6 +199,7 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 |-------|--------|-------------|
 | [heBERT_sentiment_analysis](https://huggingface.co/avichr/heBERT_sentiment_analysis) | avichr | Hebrew sentiment analysis |
 | [dictabert-sentiment](https://huggingface.co/dicta-il/dictabert-sentiment) | dicta-il | Hebrew sentiment classifier |
+| [xlm-r_hebrew_sentiment](https://huggingface.co/DGurgurov/xlm-r_hebrew_sentiment) | DGurgurov | XLM-R fine-tuned for Hebrew sentiment (accuracy 0.92) |
 | [hebEMO](https://huggingface.co/avichr/hebEMO_anger) | avichr | Hebrew emotion detection (8 emotions: anger, fear, joy, surprise, sadness, disgust, anticipation, trust) |
 
 ### Morphology & Parsing
@@ -195,6 +230,9 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 | [hebert_parashoot](https://huggingface.co/imvladikon/hebert_parashoot) | imvladikon | QA | Hebrew reading comprehension |
 | [hebrew-offensive-detection](https://huggingface.co/KevynKrancenblum/hebrew-offensive-detection) | KevynKrancenblum | Classification | Hebrew offensive language detection |
 | [hebert-finetuned-hebrew-metaphor](https://huggingface.co/tdklab/hebert-finetuned-hebrew-metaphor) | tdklab | Classification | Hebrew metaphor detection |
+| [hebrew-intent-classifier](https://huggingface.co/humy65/hebrew-intent-classifier) | humy65 | Classification | BERT intent classifier for Hebrew customer-service text (4 classes) |
+| [hebrew-latin-token-classifier](https://huggingface.co/danielrosehill/hebrew-latin-token-classifier) | danielrosehill | Token classification | Finds Hebrew words written in Latin letters; moved to Hebrish/Hebrew-Latin-Token-Classifier |
+| [punctuation-restoration-deberta-alepgbert-hebrew](https://huggingface.co/baravninaor/punctuation-restoration-deberta-alepgbert-hebrew) | baravninaor | Punctuation | Hebrew punctuation restoration (no model card) |
 
 ---
 
@@ -215,6 +253,7 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 | [opus-mt-en-he](https://huggingface.co/Helsinki-NLP/opus-mt-en-he) | Helsinki-NLP | EN → HE | English to Hebrew translation |
 | [opus-mt-tc-big-he-en](https://huggingface.co/Helsinki-NLP/opus-mt-tc-big-he-en) | Helsinki-NLP | HE → EN | Hebrew to English, large model |
 | [english-hebrew-translation](https://huggingface.co/ashercn97/english-hebrew-translation) | ashercn97 | EN ↔ HE | T5-based English-Hebrew translation |
+| [english-hebrew](https://huggingface.co/SoyGema/english-hebrew) | SoyGema | EN-HE | t5-small fine-tuned on opus100 en-he |
 
 ---
 
@@ -225,6 +264,7 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 | [het5_summarization](https://huggingface.co/imvladikon/het5_summarization) | imvladikon | Hebrew T5 for summarization |
 | [het5_small_summarization](https://huggingface.co/imvladikon/het5_small_summarization) | imvladikon | Smaller Hebrew T5 summarization |
 | [cross_summarization_he_en](https://huggingface.co/imvladikon/cross_summarization_he_en) | imvladikon | Cross-lingual Hebrew-English summarization |
+| [hebrew-summarization-llm](https://huggingface.co/maayanorner/hebrew-summarization-llm) | maayanorner | DictaLM 2.0 fine-tuned for Hebrew summarization; author says not evaluated |
 
 ---
 
@@ -235,6 +275,7 @@ An emerging area for Hebrew — no production-grade standalone model yet, but ac
 | [testing-trOCR-hebrew-handwritten](https://huggingface.co/sivan22/testing-trOCR-hebrew-handwritten) | sivan22 | TrOCR for Hebrew handwritten text |
 | [paleo-hebrew-mt5-post-ocr-processing](https://huggingface.co/mr3vial/paleo-hebrew-mt5-post-ocr-processing) | mr3vial | Post-OCR correction for paleo-Hebrew |
 | [paleo-hebrew-qwen3-vl-lora-post-ocr-processing](https://huggingface.co/mr3vial/paleo-hebrew-qwen3-vl-lora-post-ocr-processing) | mr3vial | Vision-language post-OCR for paleo-Hebrew |
+| [hebrew-Hand-Writen](https://huggingface.co/makies/hebrew-Hand-Writen) | makies | Hebrew handwriting image-to-text (no model card) |
 
 ---
 

@@ -1,4 +1,493 @@
 {
   "_about": "Cumulative triage verdicts, one per model id, so later sweeps only triage new models. Verdicts and rules: docs/classification.md.",
-  "models": {}
+  "models": {
+    "DGurgurov/xlm-r_hebrew_sentiment": {
+      "verdict": "specialist",
+      "task": "text-classification",
+      "reason": "XLM-R fine-tuned on Hebrew sentiment (hebrew_sa)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "GiliGold/Knesset-DictaBERT": {
+      "verdict": "specialist",
+      "task": "fill-mask",
+      "reason": "DictaBERT fine-tuned on Knesset corpus",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "Hebrish/Jachnun-GGUF": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "GGUF of Hebrish/Jachnun (English-Hebrew code-switching ASR); card says outdated, use Sabich-Rolling",
+      "variant_of": "Hebrish/Jachnun",
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "Hebrish/Jachnun-ONNX": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "ONNX of Hebrish/Jachnun (English-Hebrew code-switching ASR); card says outdated, use Sabich-Rolling",
+      "variant_of": "Hebrish/Jachnun",
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "Hebrish/Jachnun-sherpa-onnx-int8": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "sherpa-onnx int8 of Hebrish/Jachnun (English-Hebrew code-switching ASR); card says outdated, use Sabich-Rolling",
+      "variant_of": "Hebrish/Jachnun",
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "Hebrish/Whisper-Hebrish-Small-ACFT": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "Maintainer own: English-Hebrew code-switching Whisper small.en ACFT; card gated, tags only",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "MaorB/embeddinggemma-2-asr-hebrew-english-streaming": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "borderline: Hebrew+English streaming ASR on EmbeddingGemma 2 encoder; Hebrew is one of two target languages, lean specialist",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "Mizurodp/wav2vec2-large-xls-r-300m-hebrew-colab": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "Hebrew wav2vec2 XLS-R 300M fine-tune; card missing, thin",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "SoyGema/english-hebrew": {
+      "verdict": "specialist",
+      "task": "translation",
+      "reason": "t5-small fine-tuned on opus100 en-he",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "Trojanssafsdg/hebrewTTS-orpheus3b": {
+      "verdict": "specialist",
+      "task": "text-to-speech",
+      "reason": "Orpheus 3B Hebrew TTS; Unsloth stub card, thin",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "XythicK/Hebrew-GPT": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "Yzamari/f5tts-hebrew-v2": {
+      "verdict": "specialist",
+      "task": "text-to-speech",
+      "reason": "F5-TTS fine-tuned on ~158h Hebrew speech",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "adarcook/whisper-large-v3-hebrew": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "Whisper large-v3 fine-tuned for Hebrew; auto-generated card, thin",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "asfberlin/fast-hebrew-asr": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "GigaAM-He: 220M CTC Hebrew ASR, faster but less accurate than ivrit.ai turbo",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "ashercn97/english-hebrew-translation": {
+      "verdict": "specialist",
+      "task": "translation",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "baravninaor/punctuation-restoration-deberta-alepgbert-hebrew": {
+      "verdict": "specialist",
+      "task": "token-classification",
+      "reason": "Hebrew punctuation restoration by name; empty card, thin",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "danielrosehill/Whisper-Hebrish": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "Maintainer own: Whisper large-v3-turbo fine-tune on English-Hebrew code-switching sentences",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "danielrosehill/hebrew-latin-token-classifier": {
+      "verdict": "specialist",
+      "task": "token-classification",
+      "reason": "Maintainer own: finds Hebrew words written in Latin letters; repo moved to Hebrish/Hebrew-Latin-Token-Classifier",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "dicta-il/DictaLM-3.0-1.7B-Instruct": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "dicta-il/DictaLM-3.0-24B-Base": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "dicta-il/DictaLM-3.0-24B-Thinking": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "dicta-il/dictabert": {
+      "verdict": "specialist",
+      "task": "fill-mask",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "dicta-il/dictabert-heq": {
+      "verdict": "specialist",
+      "task": "question-answering",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "dicta-il/dictabert-joint": {
+      "verdict": "specialist",
+      "task": "token-classification",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "dicta-il/dictabert-morph": {
+      "verdict": "specialist",
+      "task": "token-classification",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "dicta-il/dictabert-seg": {
+      "verdict": "specialist",
+      "task": "token-classification",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "dicta-il/dictabert-sentiment": {
+      "verdict": "specialist",
+      "task": "text-classification",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "dicta-il/dictalm2.0-instruct": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "dm15/MOSS-TTS-Realtime-Hebrew": {
+      "verdict": "specialist",
+      "task": "text-to-speech",
+      "reason": "Hebrew name; card missing, thin",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "guychuk/qwen3-asr-hebrew": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "Hebrew name; card missing, thin",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "humy65/hebrew-intent-classifier": {
+      "verdict": "specialist",
+      "task": "text-classification",
+      "reason": "BERT Hebrew intent classifier for customer service (4 classes)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "imvladikon/wav2vec2-large-xlsr-53-hebrew": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "imvladikon/wav2vec2-xls-r-1b-hebrew": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "imvladikon/wav2vec2-xls-r-300m-hebrew": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "imvladikon/wav2vec2-xls-r-300m-lm-hebrew": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "itayl/Llama-3.2-3B-Instruct-Aya-Hebrew-Lora": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Hebrew LoRA on Llama 3.2 3B Instruct (Aya data per name); thin card",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "itayl/Qwen2.5-1.5B-Instruct-bnb-4bit-Hebrew": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Hebrew fine-tune of Qwen2.5 1.5B Instruct; thin card",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "itayl/qwen2.5-3b_Hebrew": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Hebrew fine-tune of Qwen2.5 3B; card is an Unsloth stub, thin",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "itayl/qwen2.5-3b_Hebrew-Q5_K_M-GGUF": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Q5_K_M GGUF of itayl/qwen2.5-3b_Hebrew; thin card",
+      "variant_of": "itayl/qwen2.5-3b_Hebrew",
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "ivrit-ai/faster-whisper-v2-d4": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "ivrit-ai/whisper-v2-d4": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "maayanorner/hebrew-summarization-llm": {
+      "verdict": "specialist",
+      "task": "summarization",
+      "reason": "DictaLM2.0 fine-tuned for Hebrew summarization; not evaluated",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "makies/hebrew-Hand-Writen": {
+      "verdict": "specialist",
+      "task": "image-to-text",
+      "reason": "Hebrew handwriting image-to-text by name; empty card, thin",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "mradermacher/Hebrew-Gemma-11B-i1-GGUF": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "imatrix GGUF quants of yam-peleg/Hebrew-Gemma-11B",
+      "variant_of": "yam-peleg/Hebrew-Gemma-11B",
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "mradermacher/Hebrew-Mistral-7B-GGUF": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "GGUF quants of yam-peleg/Hebrew-Mistral-7B",
+      "variant_of": "yam-peleg/Hebrew-Mistral-7B",
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "mradermacher/Hebrew_Nemo-i1-GGUF": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "imatrix GGUF quants of SicariusSicariiStuff/Hebrew_Nemo",
+      "variant_of": "SicariusSicariiStuff/Hebrew_Nemo",
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "mralexivy/nemotron-3.5-asr-streaming-0.6b-hebrew": {
+      "verdict": "specialist",
+      "task": "automatic-speech-recognition",
+      "reason": "Nemotron 3.5 ASR streaming fine-tuned on ivrit.ai data; WER 0.426 raw",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "notmax123/Zonos-Hebrew": {
+      "verdict": "specialist",
+      "task": "text-to-speech",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "rony-shtamler/Hebrew-Mistral-7B-Q4_K_M-GGUF": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Q4_K_M GGUF of yam-peleg/Hebrew-Mistral-7B",
+      "variant_of": "yam-peleg/Hebrew-Mistral-7B",
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "sivan22/testing-trOCR-hebrew-handwritten": {
+      "verdict": "specialist",
+      "task": "image-text-to-text",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "tensorblock/Hebrew-Mistral-7B-GGUF": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "GGUF quants of yam-peleg/Hebrew-Mistral-7B",
+      "variant_of": "yam-peleg/Hebrew-Mistral-7B",
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "thewh1teagle/kokoro-hebrew-nc": {
+      "verdict": "specialist",
+      "task": "text-to-speech",
+      "reason": "non-commercial ONNX export of avris/kokoro-hebrew-saspeech",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "tombenj/hebrew_bible_ai": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "gpt2-xl fine-tuned on the Hebrew Bible",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "verbit/hebrew_punctuation": {
+      "verdict": "specialist",
+      "task": "token-classification",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "yam-peleg/Hebrew-Gemma-11B": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "yam-peleg/Hebrew-Gemma-11B-Instruct": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "yam-peleg/Hebrew-Gemma-11B-V2": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "yam-peleg/Hebrew-Mistral-7B": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "yam-peleg/Hebrew-Mistral-7B-200K": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Hebrew specialist by id, tags and org (known Hebrew author or Hebrew-only tags)",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "yam-peleg/Hebrew-Mixtral-8x22B": {
+      "verdict": "specialist",
+      "task": "text-generation",
+      "reason": "Mixtral 8x22B continued-pretrained on English and Hebrew, 141B",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    },
+    "yosefw/bert-mini-hebrew": {
+      "verdict": "specialist",
+      "task": "fill-mask",
+      "reason": "Small Hebrew BERT; card auto-generated, thin",
+      "variant_of": null,
+      "first_seen": "2026-11-18",
+      "decided": "2026-11-18"
+    }
+  }
 }
