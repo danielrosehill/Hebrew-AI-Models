@@ -307,6 +307,12 @@ Curated Hugging Face collections (by danielrosehill) grouping Hebrew models, dat
 
 ---
 
+## How this list is maintained
+
+Models are swept from Hugging Face with saved searches ([`hfsearches.json`](hfsearches.json)): the Hebrew language tag plus a task (text generation, ASR, TTS and others), sorted by trending or downloads, plus name searches for "heb". Each sweep keeps a dated raw snapshot in [`snapshots/`](snapshots/) and every model gets a recorded verdict in [`data/verdicts.json`](data/verdicts.json).
+
+Most models tagged Hebrew on the Hub are multilingual models that list Hebrew among many languages. They are not Hebrew models, so this list keeps them apart: **Hebrew specialist** models (trained or fine-tuned for Hebrew) fill the main tables, and notable multilingual models with Hebrew support go in a separate *Multilingual models with Hebrew support* subsection. Criteria: [`docs/classification.md`](docs/classification.md).
+
 ## Contributing
 
 Know of a Hebrew AI model not listed here? Open a pull request or file an issue.

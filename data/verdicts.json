@@ -1,0 +1,4 @@
+{
+  "_about": "Cumulative triage verdicts, one per model id, so later sweeps only triage new models. Verdicts and rules: docs/classification.md.",
+  "models": {}
+}

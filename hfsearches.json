@@ -1,0 +1,214 @@
+{
+  "_about": "Hugging Face Hub searches for Hebrew models. mode 'tag' = Hebrew language tag + one task (pipeline_tag) + one sort: the firehose, mostly multilingual models. mode 'name' = model ids containing 'heb' (also matches 'hebrew') + one task: the specialist lane. scripts/snapshot.py runs them; web_url is the same search in the browser. Add a permutation by adding an entry; ids are <task-short>-<sort> or <task-short>-name.",
+  "api_notes": "API uses filter=he (exact tag match), not language=he: on 2026-11-18 the API's language=he returned 1000 TTS models of which only 54 carried the he tag (Kokoro-82M, pyannote, Japanese wav2vec2...), while filter=he returned 419, all tagged. search=heb returned 11 TTS models, 9 of them Hebrew specialists.",
+  "language": "he",
+  "api_base": "https://huggingface.co/api/models",
+  "sorts": {
+    "trending": {
+      "web": "trending",
+      "api": "trendingScore"
+    },
+    "downloads": {
+      "web": "downloads",
+      "api": "downloads"
+    },
+    "likes": {
+      "web": "likes",
+      "api": "likes"
+    },
+    "recent": {
+      "web": "created",
+      "api": "createdAt"
+    }
+  },
+  "known_hebrew_authors": [
+    "dicta-il",
+    "ivrit-ai",
+    "yam-peleg",
+    "avichr",
+    "onlplab",
+    "imvladikon",
+    "slprl",
+    "HeNLP",
+    "Norod78",
+    "Slasky",
+    "thewh1teagle",
+    "Hebrish",
+    "verbit"
+  ],
+  "searches": [
+    {
+      "id": "llm-trending",
+      "task": "text-generation",
+      "sort": "trending",
+      "limit": 100,
+      "tier": "core",
+      "readme_section": "Large Language Models (LLMs)",
+      "web_url": "https://huggingface.co/models?pipeline_tag=text-generation&language=he&sort=trending",
+      "mode": "tag"
+    },
+    {
+      "id": "llm-downloads",
+      "task": "text-generation",
+      "sort": "downloads",
+      "limit": 100,
+      "tier": "core",
+      "readme_section": "Large Language Models (LLMs)",
+      "web_url": "https://huggingface.co/models?pipeline_tag=text-generation&language=he&sort=downloads",
+      "mode": "tag"
+    },
+    {
+      "id": "asr-trending",
+      "task": "automatic-speech-recognition",
+      "sort": "trending",
+      "limit": 100,
+      "tier": "core",
+      "readme_section": "Speech-to-Text / ASR",
+      "web_url": "https://huggingface.co/models?pipeline_tag=automatic-speech-recognition&language=he&sort=trending",
+      "mode": "tag"
+    },
+    {
+      "id": "asr-downloads",
+      "task": "automatic-speech-recognition",
+      "sort": "downloads",
+      "limit": 100,
+      "tier": "core",
+      "readme_section": "Speech-to-Text / ASR",
+      "web_url": "https://huggingface.co/models?pipeline_tag=automatic-speech-recognition&language=he&sort=downloads",
+      "mode": "tag"
+    },
+    {
+      "id": "tts-trending",
+      "task": "text-to-speech",
+      "sort": "trending",
+      "limit": 100,
+      "tier": "core",
+      "readme_section": "Text-to-Speech (TTS)",
+      "web_url": "https://huggingface.co/models?pipeline_tag=text-to-speech&language=he&sort=trending",
+      "mode": "tag"
+    },
+    {
+      "id": "tts-downloads",
+      "task": "text-to-speech",
+      "sort": "downloads",
+      "limit": 100,
+      "tier": "core",
+      "readme_section": "Text-to-Speech (TTS)",
+      "web_url": "https://huggingface.co/models?pipeline_tag=text-to-speech&language=he&sort=downloads",
+      "mode": "tag"
+    },
+    {
+      "id": "llm-name",
+      "mode": "name",
+      "task": "text-generation",
+      "search": "heb",
+      "sort": "downloads",
+      "limit": 500,
+      "tier": "core",
+      "readme_section": "Large Language Models (LLMs)",
+      "web_url": "https://huggingface.co/models?pipeline_tag=text-generation&search=heb&sort=downloads"
+    },
+    {
+      "id": "asr-name",
+      "mode": "name",
+      "task": "automatic-speech-recognition",
+      "search": "heb",
+      "sort": "downloads",
+      "limit": 500,
+      "tier": "core",
+      "readme_section": "Speech-to-Text / ASR",
+      "web_url": "https://huggingface.co/models?pipeline_tag=automatic-speech-recognition&search=heb&sort=downloads"
+    },
+    {
+      "id": "tts-name",
+      "mode": "name",
+      "task": "text-to-speech",
+      "search": "heb",
+      "sort": "downloads",
+      "limit": 500,
+      "tier": "core",
+      "readme_section": "Text-to-Speech (TTS)",
+      "web_url": "https://huggingface.co/models?pipeline_tag=text-to-speech&search=heb&sort=downloads"
+    },
+    {
+      "id": "translation-downloads",
+      "task": "translation",
+      "sort": "downloads",
+      "limit": 100,
+      "tier": "extra",
+      "readme_section": "Translation",
+      "web_url": "https://huggingface.co/models?pipeline_tag=translation&language=he&sort=downloads",
+      "mode": "tag"
+    },
+    {
+      "id": "embeddings-downloads",
+      "task": "sentence-similarity",
+      "sort": "downloads",
+      "limit": 100,
+      "tier": "extra",
+      "readme_section": "Embeddings",
+      "web_url": "https://huggingface.co/models?pipeline_tag=sentence-similarity&language=he&sort=downloads",
+      "mode": "tag"
+    },
+    {
+      "id": "feature-extraction-downloads",
+      "task": "feature-extraction",
+      "sort": "downloads",
+      "limit": 100,
+      "tier": "extra",
+      "readme_section": "Embeddings",
+      "web_url": "https://huggingface.co/models?pipeline_tag=feature-extraction&language=he&sort=downloads",
+      "mode": "tag"
+    },
+    {
+      "id": "ner-downloads",
+      "task": "token-classification",
+      "sort": "downloads",
+      "limit": 100,
+      "tier": "extra",
+      "readme_section": "NLP Models",
+      "web_url": "https://huggingface.co/models?pipeline_tag=token-classification&language=he&sort=downloads",
+      "mode": "tag"
+    },
+    {
+      "id": "text-classification-downloads",
+      "task": "text-classification",
+      "sort": "downloads",
+      "limit": 100,
+      "tier": "extra",
+      "readme_section": "NLP Models",
+      "web_url": "https://huggingface.co/models?pipeline_tag=text-classification&language=he&sort=downloads",
+      "mode": "tag"
+    },
+    {
+      "id": "fill-mask-downloads",
+      "task": "fill-mask",
+      "sort": "downloads",
+      "limit": 100,
+      "tier": "extra",
+      "readme_section": "NLP Models",
+      "web_url": "https://huggingface.co/models?pipeline_tag=fill-mask&language=he&sort=downloads",
+      "mode": "tag"
+    },
+    {
+      "id": "summarization-downloads",
+      "task": "summarization",
+      "sort": "downloads",
+      "limit": 100,
+      "tier": "extra",
+      "readme_section": "Summarization",
+      "web_url": "https://huggingface.co/models?pipeline_tag=summarization&language=he&sort=downloads",
+      "mode": "tag"
+    },
+    {
+      "id": "ocr-downloads",
+      "task": "image-to-text",
+      "sort": "downloads",
+      "limit": 100,
+      "tier": "extra",
+      "readme_section": "OCR / Vision",
+      "web_url": "https://huggingface.co/models?pipeline_tag=image-to-text&language=he&sort=downloads",
+      "mode": "tag"
+    }
+  ]
+}
