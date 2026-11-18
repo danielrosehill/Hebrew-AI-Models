@@ -2,8 +2,8 @@
 """Build the Hugging Face Space (static SDK) for this list from README.md.
 
 Shared, byte-identical, by Hebrew-AI-Models and Hebrew-Datasets. Settings come from space.json.
-README.md is the source: every `## Section` / `### Subsection` and every markdown table under it
-becomes a searchable, filterable page. Stdlib only.
+README.md is the source: every `## Section` / `### Subsection` and the cards under it (heading, description,
+`*details*` line, badge links) become a searchable, filterable page. Stdlib only.
 
   uv run scripts/build_space.py            # writes space/ (README.md with Space front matter, index.html, data.json)
 
@@ -17,7 +17,7 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
-SKIP_SECTIONS = {"Table of Contents", "Contributing", "License", "How this list is maintained"}
+SKIP_SECTIONS = {"Table of Contents", "Contents", "Contributing", "License", "How this list is maintained"}
 
 
 def md_inline(text):
@@ -26,28 +26,58 @@ def md_inline(text):
     return re.sub(r"\*\*([^*]+)\*\*", r"<b>\1</b>", text)
 
 
+BADGE = re.compile(r"\[!\[([^\]]*)\]\([^)]*\)\]\(([^)]+)\)")
+COLUMNS = ["Name", "Description", "Details", "Links"]
+
+
 def parse(readme):
-    sections, sec, sub, header, intro = [], None, None, None, []
+    """README cards -> sections. A `###`/`####` heading whose block has a badge line is an entry;
+    any other `###` heading is a subsection. `*...*` lines are details; other text is the description."""
+    sections, sec, sub, entry = [], None, None, None
+
+    def close():
+        nonlocal entry
+        if entry and sec is not None:
+            links = entry["links"]
+            name = f"[{entry['name']}]({links[0][1]})" if links else entry["name"]
+            row = [name, " ".join(entry["desc"]), " ".join(entry["meta"]),
+                   " · ".join(f"[{lab}]({url})" for lab, url in links)]
+            if not sec["tables"] or sec["tables"][-1]["subsection"] != sub:
+                sec["tables"].append({"subsection": sub, "columns": COLUMNS, "rows": []})
+            sec["tables"][-1]["rows"].append(row)
+        entry = None
+
+    blocks, cur = [], None
     for line in readme.splitlines():
-        if line.startswith("## "):
-            name = line[3:].strip()
-            sec = None if name in SKIP_SECTIONS else {"name": name, "tables": []}
+        if re.match(r"#{2,4} ", line):
+            cur = [line, []]
+            blocks.append(cur)
+        elif cur is not None:
+            cur[1].append(line)
+    for head, body in blocks:
+        level, title = len(head) - len(head.lstrip("#")), head.lstrip("#").strip()
+        if level == 2:
+            close()
+            sec = None if title in SKIP_SECTIONS else {"name": title, "tables": []}
             if sec:
                 sections.append(sec)
-            sub, header = None, None
-        elif line.startswith("### ") and sec:
-            sub, header = line[4:].strip(), None
-        elif line.startswith("|") and sec:
-            cells = [c.strip() for c in line.strip().strip("|").split("|")]
-            if all(re.fullmatch(r":?-{2,}:?", c) for c in cells):
+            sub = None
+            continue
+        if sec is None:
+            continue
+        badges = [m for l in body if l.startswith("[![") for m in BADGE.findall(l)]
+        if not badges:
+            close()
+            sub = title
+            continue
+        close()
+        entry = {"name": title, "links": badges, "desc": [], "meta": []}
+        for l in body:
+            l = l.strip()
+            if not l or l == "---" or l.startswith("[![") or l.startswith("<!--"):
                 continue
-            if header is None:
-                header = cells
-                sec["tables"].append({"subsection": sub, "columns": header, "rows": []})
-            else:
-                sec["tables"][-1]["rows"].append(cells)
-        else:
-            header = None
+            (entry["meta"] if l.startswith("*") and l.endswith("*") else entry["desc"]).append(l.strip("*") if l.startswith("*") and l.endswith("*") else l)
+    close()
     return [s for s in sections if any(t["rows"] for t in s["tables"])]
 
 

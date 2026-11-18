@@ -2,7 +2,7 @@
 
 A Hugging Face search for Hebrew returns mostly models that **support** Hebrew among many languages
 (Whisper, XTTS, OmniVoice, Qwen...). Those are not Hebrew models. The list keeps the two apart:
-each README task section has Hebrew specialist tables first, then a
+each README task section has Hebrew specialist subsections first, then a
 `### Multilingual models with Hebrew support` subsection.
 
 ## Verdicts
@@ -47,4 +47,4 @@ is still a specialist, but the README description should say it's thin.
 Rules the maintainer has given for edge cases. Add new ones here, dated, and apply them before the
 general criteria above.
 
-- 2026-11-18: A multilingual model that lists Hebrew support is not a Hebrew specialist; when it is worth listing it goes in the separate multilingual subsection, never mixed into the specialist tables.
+- 2026-11-18: A multilingual model that lists Hebrew support is not a Hebrew specialist; when it is worth listing it goes in the separate multilingual subsection, never mixed into the specialist subsections.

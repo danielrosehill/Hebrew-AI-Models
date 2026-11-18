@@ -13,5 +13,5 @@ Shared by Hebrew-AI-Models (imports models) and Hebrew-Datasets (imports dataset
 2. **Snapshot.** `uv run scripts/snapshot.py --collections`. This writes `snapshots/YYYY-MM-DD/collection-<key>.json` and merges into that day's `candidates.json`; items from collections have `curated: true`.
 3. **Triage** the candidates with no `prior_verdict`, following steps 3 to 5 of the sweep skill and `docs/classification.md`. Curated means the maintainer thought the item was worth saving, not that it's a Hebrew specialist: a multilingual item from a collection is usually `multilingual-notable` rather than `multilingual-skip`.
 4. **File** new items in the README following step 6 of the sweep skill. Items already in the README (`in_readme: true`) still get a verdict entry.
-5. **Regenerate the collections table:** `uv run scripts/render_collections.py`. It rewrites the block between the `collections:start/end` markers; never hand-edit that block.
+5. **Regenerate the collections cards:** `uv run scripts/render_collections.py`. It rewrites the block between the `collections:start/end` markers; never hand-edit that block.
 6. **Report and ship** following steps 7 and 8 of the sweep skill. If the Space exists, offer to rebuild it (skill `build-hf-space`).
