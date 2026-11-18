@@ -1366,6 +1366,16 @@ Hebrew T5 for summarization.
 
 An emerging area for Hebrew — no production-grade standalone model yet, but active research.
 
+### BlueV3
+
+Open-source (MIT) Hebrew-first TTS on ONNX Runtime: flow matching with RenikudPlus Hebrew G2P, voice cloning from a 3-10 s clip, 44.1 kHz output, runs on CPU. Also speaks English, German, Spanish, Italian, Russian and Yiddish.
+
+*Author: notmax123*
+
+[![Model](https://img.shields.io/badge/Hugging_Face-Model-FFD21E?style=flat&logo=huggingface)](https://huggingface.co/notmax123/BlueV3-onnx) [![View Repo](https://img.shields.io/badge/View-Repo-blue?style=flat&logo=github)](https://github.com/maxmelichov/BlueTTS)
+
+---
+
 ### f5tts-hebrew-v2
 
 F5-TTS fine-tuned on ~158h of Hebrew speech, 58 built-in voices.
